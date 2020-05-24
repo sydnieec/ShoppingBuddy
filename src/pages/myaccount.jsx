@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MainPage = () => {
+const MyAccountPage = () => {
   return (
     <div>
       {/* Navbar code  */}
@@ -49,10 +49,8 @@ const MainPage = () => {
         </div>
       </nav>
 
-      <h3>How to use! </h3>
-      <small> main page</small>
-      <Link to="/users"> Sign Up/ Log in! </Link>
+      <h3>My account </h3>
     </div>
   );
 };
-export default MainPage;
+export default MyAccountPage;
