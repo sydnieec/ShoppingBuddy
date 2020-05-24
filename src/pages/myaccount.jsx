@@ -50,8 +50,10 @@ const MyAccountPage = () => {
         </div>
       </nav>
 
-      <h3>My account </h3>
-      <Form>
+      <h1 style={divStyle} className="text-center">
+        My account
+      </h1>
+      <Form style={divStyle}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Start tracking!</Form.Label>
           <Form.Control type="email" placeholder="Enter product url!" />
@@ -68,3 +70,9 @@ const MyAccountPage = () => {
   );
 };
 export default MyAccountPage;
+
+const divStyle = {
+  paddingTop: "3%",
+  paddingLeft: "20%",
+  paddingRight: "20%",
+};

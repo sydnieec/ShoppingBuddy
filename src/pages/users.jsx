@@ -51,8 +51,10 @@ const UsersPage = () => {
         </div>
       </nav>
 
-      <h3>Welcome back! Please login! </h3>
-      <Form>
+      <h1 style={divStyle} className="text-center">
+        Welcome back!{" "}
+      </h1>
+      <Form style={divStyle}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -74,3 +76,9 @@ const UsersPage = () => {
   );
 };
 export default UsersPage;
+
+const divStyle = {
+  paddingTop: "5%",
+  paddingLeft: "20%",
+  paddingRight: "20%",
+};

@@ -52,8 +52,10 @@ const SignUpPage = () => {
         </div>
       </nav>
 
-      <h3>Create an account! </h3>
-      <Form>
+      <h1 style={divStyle} className="text-center">
+        Create an account!{" "}
+      </h1>
+      <Form style={divStyle}>
         <Form.Row>
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email</Form.Label>
@@ -83,3 +85,8 @@ const SignUpPage = () => {
   );
 };
 export default SignUpPage;
+const divStyle = {
+  paddingTop: "5%",
+  paddingLeft: "20%",
+  paddingRight: "20%",
+};
