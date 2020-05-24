@@ -52,7 +52,7 @@ const UsersPage = () => {
       </nav>
 
       <h3>Welcome back! Please login! </h3>
-      <Form xs=={2}>
+      <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
