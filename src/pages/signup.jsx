@@ -52,7 +52,7 @@ const SignUpPage = () => {
         </div>
       </nav>
 
-      <h3>Signup page </h3>
+      <h3>Create an account! </h3>
       <Form>
         <Form.Row>
           <Form.Group as={Col} controlId="formGridEmail">

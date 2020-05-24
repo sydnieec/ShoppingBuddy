@@ -51,8 +51,8 @@ const UsersPage = () => {
         </div>
       </nav>
 
-      <h3>Welcome, login </h3>
-      <Form>
+      <h3>Welcome back! Please login! </h3>
+      <Form xs=={2}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -65,9 +65,7 @@ const UsersPage = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+
         <Button variant="primary" type="submit">
           Sign up!
         </Button>

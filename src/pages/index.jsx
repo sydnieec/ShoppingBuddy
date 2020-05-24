@@ -49,7 +49,7 @@ const MainPage = () => {
         </div>
       </nav>
 
-      <h3>How to use! </h3>
+      <h1 className="text-center"> How to use! </h1>
       <small> main page</small>
       <Link to="/users"> Sign Up/ Log in! </Link>
     </div>

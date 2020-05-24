@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 const MyAccountPage = () => {
   return (
     <div>
@@ -50,6 +51,19 @@ const MyAccountPage = () => {
       </nav>
 
       <h3>My account </h3>
+      <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Start tracking!</Form.Label>
+          <Form.Control type="email" placeholder="Enter product url!" />
+          <Form.Text className="text-muted">
+            We will send you a push notification, when this product goes on
+            sale!
+          </Form.Text>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Add
+        </Button>
+      </Form>
     </div>
   );
 };
