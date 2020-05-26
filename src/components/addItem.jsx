@@ -17,6 +17,9 @@ class AddItem extends React.Component {
   handleSubmit(event) {
     alert("Item has been added! " + this.state.value);
     event.preventDefault();
+    this.setState({
+      value: "",
+    });
   }
 
   render() {
@@ -29,7 +32,7 @@ class AddItem extends React.Component {
             placeholder="Enter product url!"
             onChange={this.handleChange}
             value={this.state.value}
-            id="mainInput"
+            id="additemform"
           />
           <Form.Text className="text-muted">
             We will send you a push notification, when this product goes on
