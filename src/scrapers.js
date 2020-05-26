@@ -16,7 +16,7 @@ async function scrapeProduct(url) {
 
     console.log({ title, price });
 
-    broswer.close();
+    browser.close();
   } catch (error) {
     console.log("error");
   }
