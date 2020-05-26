@@ -4,27 +4,19 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/navbar.jsx";
+import Item from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/itemsComponent.jsx";
+import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
 const MyAccountPage = () => {
   return (
     <div>
       <Navbar />
-
       <h1 style={divStyle} className="text-center">
-        My account
+        {" "}
+        My account{" "}
       </h1>
-      <Form style={divStyle}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Start tracking!</Form.Label>
-          <Form.Control type="url" placeholder="Enter product url!" />
-          <Form.Text className="text-muted">
-            We will send you a push notification, when this product goes on
-            sale!
-          </Form.Text>
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Add
-        </Button>
-      </Form>
+
+      <AddItem />
+      <Item />
     </div>
   );
 };
