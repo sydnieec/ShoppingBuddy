@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+// const puppeteer = require("puppeteer");
+// import { scrapeProduct } from "/Users/sydniechau/Downloads/shoppingbuddy/src/scrapers.js";
 class AddItem extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ class AddItem extends React.Component {
 
   handleSubmit(event) {
     alert("Item has been added! " + this.state.value);
+
     event.preventDefault();
     this.setState({
       value: "",
