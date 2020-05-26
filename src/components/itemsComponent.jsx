@@ -6,25 +6,25 @@ class Item extends Component {
   render() {
     return (
       <div style={divStyle}>
-        <span className={this.getBadgeClasses()} style={{ fontSize: 15 }}>
+        {/* <span className={this.getBadgeClasses()} style={{ fontSize: 15 }}>
           {this.formatCount()}
-        </span>
+        </span> */}
         <button className="btn btn-secondary btn-sm ">Delete </button>
       </div>
     );
   }
-  getBadgeClasses() {
-    let classes = "badge m-5 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
-    return classes;
-  }
+  // getBadgeClasses() {
+  //   let classes = "badge m-5 badge-";
+  //   classes += this.state.count === 0 ? "warning" : "primary";
+  //   return classes;
+  // }
 
-  formatCount() {
-    const { count } = this.state;
-    return count === 0
-      ? "You are not currently tracking any items"
-      : "Current tracking: " + count;
-  }
+  // formatCount() {
+  //   const { count } = this.state;
+  //   return count === 0
+  //     ? "You are not currently tracking any items"
+  //     : "Current tracking: " + count;
+  // }
 }
 
 export default Item;

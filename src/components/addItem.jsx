@@ -24,6 +24,9 @@ class AddItem extends React.Component {
 
   render() {
     return (
+      //tracks how many items you currently have
+
+      // form to add item
       <Form style={divStyle} onSubmit={this.handleSubmit}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Start tracking!</Form.Label>
