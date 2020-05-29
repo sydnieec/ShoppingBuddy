@@ -6,6 +6,7 @@ import Table from "react-bootstrap/Table";
 import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/navbar.jsx";
 import Item from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/itemsComponent.jsx";
 import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
+import PostList from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/PostList.jsx";
 const MyAccountPage = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const MyAccountPage = () => {
 
       <AddItem />
       <Item />
+      <PostList />
     </div>
   );
 };

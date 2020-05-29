@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
 // const puppeteer = require("puppeteer");
 // import { scrapeProduct } from "/Users/sydniechau/Downloads/shoppingbuddy/src/scrapers.js";
 class AddItem extends React.Component {
@@ -14,9 +15,36 @@ class AddItem extends React.Component {
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
+  async getProductInfo() {
+    let response = () => {
+      return new Promise(function (resolve, reject) {
+        fetch("http://localhost:3000/testing", {}).then((response) => {
+          console.log("here");
+          console.log(response);
+          console.log(response.data);
+          resolve(response);
+        });
+      });
+    };
+    let responseData = await response();
+    console.log(response.data);
+    alert(responseData.data);
+  }
 
   handleSubmit(event) {
-    alert("Item has been added! " + this.state.value);
+    // alert("Item has been added! " + this.state.value);
+
+    // axios
+    //   .get("http://127.0.0.1:3000/")
+    //   .then(function (response) {
+    //     console.log(response);
+    //     alert(response);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //     alert(console);
+    //   });
+    this.getProductInfo();
 
     event.preventDefault();
     this.setState({
