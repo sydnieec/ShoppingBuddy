@@ -15,25 +15,29 @@ class AddItem extends React.Component {
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-  async getProductInfo() {
-    let response = () => {
-      return new Promise(function (resolve, reject) {
-        fetch("http://localhost:3000/testing", {}).then((response) => {
-          console.log("here");
-          console.log(response);
-          console.log(response.data);
-          resolve(response);
-        });
+  addurl(myurl) {
+    // var bodyFormData = new FormData();
+    // bodyFormData.set("url", myurl);
+    console.log("yo" + myurl);
+    axios({
+      method: "post",
+      url: "http://localhost:3000/additem",
+      data: myurl,
+      headers: { "Content-Type": "text/plain" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
       });
-    };
-    let responseData = await response();
-    console.log(response.data);
-    alert(responseData.data);
   }
 
   handleSubmit(event) {
     // alert("Item has been added! " + this.state.value);
-
+    this.addurl(this.state.value);
     // axios
     //   .get("http://127.0.0.1:3000/")
     //   .then(function (response) {
@@ -44,7 +48,7 @@ class AddItem extends React.Component {
     //     console.log(error);
     //     alert(console);
     //   });
-    this.getProductInfo();
+    // this.getProductInfo();
 
     event.preventDefault();
     this.setState({
