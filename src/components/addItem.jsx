@@ -22,8 +22,8 @@ class AddItem extends React.Component {
     axios({
       method: "post",
       url: "http://localhost:3000/additem",
-      data: myurl,
-      headers: { "Content-Type": "text/plain" },
+      data: { myurl },
+      headers: {},
     })
       .then(function (response) {
         //handle success
