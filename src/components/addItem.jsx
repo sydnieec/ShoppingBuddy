@@ -27,11 +27,11 @@ class AddItem extends React.Component {
     })
       .then(function (response) {
         //handle success
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (response) {
         //handle error
-        console.log(response);
+        console.log(response.data);
       });
   }
 
