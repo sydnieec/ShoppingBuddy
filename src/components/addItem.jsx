@@ -11,6 +11,7 @@ class AddItem extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addurl = this.addurl.bind(this);
   }
   handleChange(event) {
     this.setState({ value: event.target.value });
@@ -25,19 +26,25 @@ class AddItem extends React.Component {
       data: { myurl },
       headers: {},
     })
-      .then(function (response) {
+      .then((response) => {
         //handle success
-        console.log(response.data);
+        var title = JSON.stringify(response.data[0].title);
+        var body = JSON.stringify(response.data[0].body);
+        this.props.onAdd(myurl, title, body);
+        console.log("new product" + title);
       })
-      .catch(function (response) {
+      .catch(function (err) {
         //handle error
-        console.log(response.data);
+        console.log(err);
       });
   }
 
   handleSubmit(event) {
     // alert("Item has been added! " + this.state.value);
     this.addurl(this.state.value);
+
+    // this.props.onAdd(this.state.value);
+
     // axios
     //   .get("http://127.0.0.1:3000/")
     //   .then(function (response) {

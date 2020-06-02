@@ -7,6 +7,9 @@ import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/nav
 import Item from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/itemsComponent.jsx";
 import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
 import PostList from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/PostList.jsx";
+import Products from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/products.jsx";
+import Product from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/product.jsx";
+import Main from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/main.jsx";
 const MyAccountPage = () => {
   return (
     <div>
@@ -16,9 +19,11 @@ const MyAccountPage = () => {
         My account{" "}
       </h1>
 
-      <AddItem />
-      <Item />
-      <PostList />
+      {/* <AddItem /> */}
+      {/* <Item /> */}
+      {/* <PostList /> */}
+      {/* <Products /> */}
+      <Main />
     </div>
   );
 };

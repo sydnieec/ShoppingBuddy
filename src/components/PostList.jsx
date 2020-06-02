@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+
+const uiproductlist = [];
 class PostList extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +10,10 @@ class PostList extends Component {
       products: [],
       errorMsg: "",
     };
+  }
+  renderproducts(products, responsedata) {
+    console.log("products " + products);
+    console.log("response data " + responsedata);
   }
 
   componentDidMount() {
