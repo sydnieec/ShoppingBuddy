@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Products from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/products.jsx";
 import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
+import PostList from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/PostList.jsx";
+import axios from "axios";
 
 class Main extends Component {
   state = {
@@ -47,7 +49,27 @@ class Main extends Component {
     this.setState({ productslist });
   };
 
+  handleRefresh = () => {
+    axios
+      .get("http://localhost:3000/testing")
+      .then((response) => {
+        var title = JSON.stringify(response.data[0].title);
+        var body = JSON.stringify(response.data[0].body);
+
+        console.log("this worked" + response.data.length);
+
+        // this.setState({ products: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log("error did not work");
+        // this.setState({ errorMsg: "Error retrieving data" });
+      });
+    // this.setState({ productslist });
+  };
+
   render() {
+    // this.handleRefresh();
     return (
       <React.Fragment>
         <AddItem
@@ -66,6 +88,7 @@ class Main extends Component {
             productslist={this.state.productslist}
             onDelete={this.handleDelete}
           />
+          <PostList />
         </div>
       </React.Fragment>
     );
