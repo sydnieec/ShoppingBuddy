@@ -20,7 +20,7 @@ class PostList extends Component {
     axios
       .get("http://localhost:3000/testing")
       .then((response) => {
-        console.log(response);
+        console.log(response.data[0].title);
         this.setState({ products: response.data });
       })
       .catch((error) => {
