@@ -30,11 +30,12 @@ class AddItem extends React.Component {
         //handle success
         var title = response.data[0].title;
         var body = response.data[0].body;
+        var serverurls = response.data[1];
         console.log(title);
         if (title === "error") {
           alert(body);
         } else {
-          this.props.onAdd(myurl, title, body);
+          this.props.onAdd(myurl, title, body, serverurls);
         }
       })
       .catch(function (err) {
