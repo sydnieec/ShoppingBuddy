@@ -28,10 +28,14 @@ class AddItem extends React.Component {
     })
       .then((response) => {
         //handle success
-        var title = JSON.stringify(response.data[0].title);
-        var body = JSON.stringify(response.data[0].body);
-        this.props.onAdd(myurl, title, body);
-        console.log("new product" + title);
+        var title = response.data[0].title;
+        var body = response.data[0].body;
+        console.log(title);
+        if (title === "error") {
+          alert(body);
+        } else {
+          this.props.onAdd(myurl, title, body);
+        }
       })
       .catch(function (err) {
         //handle error

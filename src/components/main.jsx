@@ -7,6 +7,7 @@ import axios from "axios";
 class Main extends Component {
   state = {
     productslist: [],
+    urls: [],
   };
 
   handleDelete = (productId) => {
@@ -15,39 +16,48 @@ class Main extends Component {
       (c) => c.id !== productId
     );
     this.setState({ productslist });
+    const urls = this.state.urls.filter((e) => e !== productId);
+    this.setState({ urls });
+    console.log(this.state.urls);
   };
 
   handleAdd = (myurl, productId, productprice) => {
     // console.log("event handler called", counterId);
     const productslist = this.state.productslist;
-    console.log("this handle delete" + productId);
+    const urls = this.state.urls;
+
     //hm
+
     this.state.productslist.push({
       id: myurl,
       name: productId,
       value: productprice,
     });
+    this.state.urls.push(myurl);
     this.setState({ productslist });
+    this.setState({ urls });
   };
 
-  handleRefresh = () => {
-    axios
-      .get("http://localhost:3000/testing")
+  handleRefresh() {
+    const urls = this.state.urls;
+    console.log("yo" + urls);
+    axios({
+      method: "post",
+      url: "http://localhost:3000/updatelist",
+      data: { urls },
+      headers: {},
+    })
       .then((response) => {
-        var title = JSON.stringify(response.data[0].title);
-        var body = JSON.stringify(response.data[0].body);
+        //handle success
 
-        console.log("this worked" + response.data.length);
-
-        // this.setState({ products: response.data });
+        console.log(response.data);
       })
-      .catch((error) => {
-        console.log(error);
-        console.log("error did not work");
-        // this.setState({ errorMsg: "Error retrieving data" });
+      .catch(function (err) {
+        //handle error
+        console.log(err);
       });
-    // this.setState({ productslist });
-  };
+  }
+
   componentDidMount() {
     const productslist = this.state.productslist;
 
@@ -56,11 +66,17 @@ class Main extends Component {
       .then((response) => {
         console.log(response.data.length);
         for (let i = 0; i < response.data.length; i++) {
-          this.state.productslist.push({
-            id: response.data[i].id,
-            name: response.data[i].title,
-            value: response.data[i].body,
-          });
+          if (response.data[i].title === "error") {
+            alert(
+              "We cannot could not retrieve product information for an item(s) in your cart! They have been removed"
+            );
+          } else {
+            this.state.productslist.push({
+              id: response.data[i].id,
+              name: response.data[i].title,
+              value: response.data[i].body,
+            });
+          }
         }
         this.setState({ productslist });
       })
