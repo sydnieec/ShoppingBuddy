@@ -20,7 +20,15 @@ class Product extends Component {
   }
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.props.product.value === 0 ? "dark" : "light";
+    if (this.props.product.value.startsWith("SALE") === true) {
+      classes += "success";
+    } else if (
+      this.props.product.value.startsWith("Price increased") === true
+    ) {
+      classes += "warning";
+    } else {
+      classes += "light";
+    }
     return classes;
   }
 

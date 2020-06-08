@@ -21,7 +21,7 @@ class Main extends Component {
     axios({
       method: "post",
       url: "http://localhost:3000/updatelist",
-      data: { urls },
+      data: { urls, productId },
       headers: {},
     })
       .then((response) => {
