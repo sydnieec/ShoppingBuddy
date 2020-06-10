@@ -107,10 +107,17 @@ class Main extends Component {
     // this.handleRefresh();
     return (
       <React.Fragment>
-        <AddItem
-          productslist={this.state.productslist}
-          onAdd={this.handleAdd}
-        />
+        <div
+          style={{
+            backgroundColor: "#e6f7f8",
+          }}
+        >
+          <AddItem
+            productslist={this.state.productslist}
+            onAdd={this.handleAdd}
+          />
+        </div>
+
         <div
           style={{
             divStyle,

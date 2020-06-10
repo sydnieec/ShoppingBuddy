@@ -17,7 +17,7 @@ const MyAccountPage = () => {
       <h1
         style={divStyle}
         style={{ fontWeight: "bold" }}
-        className="text-center"
+        className="text-center mt-2"
       >
         My account
       </h1>

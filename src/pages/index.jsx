@@ -12,7 +12,11 @@ class MainPage extends Component {
   }
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundColor: "#e6f7f8",
+        }}
+      >
         <Navbar />
         <h1 className="text-center display-4"> Welcome to Shopping Buddy! </h1>
 
