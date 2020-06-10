@@ -84,8 +84,7 @@ class AddItem extends React.Component {
             id="additemform"
           />
           <Form.Text className="text-muted">
-            We will send you a push notification, when this product goes on
-            sale!
+            We will alert you when this when this product goes on sale! :)
           </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">

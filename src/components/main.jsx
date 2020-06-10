@@ -74,6 +74,7 @@ class Main extends Component {
 
   componentDidMount() {
     const productslist = this.state.productslist;
+    document.title = "My Account";
 
     axios
       .get("http://localhost:3000/testing")
@@ -112,10 +113,7 @@ class Main extends Component {
         />
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "25vh",
+            divStyle,
           }}
         >
           <Products
@@ -130,3 +128,8 @@ class Main extends Component {
 }
 
 export default Main;
+const divStyle = {
+  paddingTop: "3%",
+  paddingLeft: "5%",
+  paddingRight: "5%",
+};

@@ -7,7 +7,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <Link to="/">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" style={{ fontWeight: "bold" }} href="#">
             Shopping Buddy
           </a>
         </Link>
@@ -33,7 +33,8 @@ class Navbar extends Component {
               </Link>
             </li>
           </ul>
-          <ul className="navbar-nav ml-auto">
+
+          {/* <ul className="navbar-nav ml-auto">
             <Link to="/users">
               <button type="button" class="btn btn-primary">
                 Login
@@ -45,7 +46,7 @@ class Navbar extends Component {
                 Sign Up
               </button>
             </Link>
-          </ul>
+          </ul> */}
         </div>
       </nav>
     );

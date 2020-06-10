@@ -14,9 +14,12 @@ const MyAccountPage = () => {
   return (
     <div>
       <Navbar />
-      <h1 style={divStyle} className="text-center">
-        {" "}
-        My account{" "}
+      <h1
+        style={divStyle}
+        style={{ fontWeight: "bold" }}
+        className="text-center"
+      >
+        My account
       </h1>
 
       {/* <AddItem /> */}
@@ -30,7 +33,7 @@ const MyAccountPage = () => {
 export default MyAccountPage;
 
 const divStyle = {
-  paddingTop: "3%",
+  paddingTop: "20%",
   paddingLeft: "20%",
   paddingRight: "20%",
 };
