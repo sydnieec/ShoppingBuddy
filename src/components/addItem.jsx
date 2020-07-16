@@ -2,24 +2,24 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-// const puppeteer = require("puppeteer");
-// import { scrapeProduct } from "/Users/sydniechau/Downloads/shoppingbuddy/src/scrapers.js";
+
+//component in charge of handling new items being added to the cart
 class AddItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addurl = this.addurl.bind(this);
   }
+
+  //detects whenver there is a change in input field
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
+
+  //sends a API post request to local server retreive product name and price
   addurl(myurl) {
-    // var bodyFormData = new FormData();
-    // bodyFormData.set("url", myurl);
-    console.log("yo" + myurl);
     axios({
       method: "post",
       url: "http://localhost:3000/additem",
@@ -27,11 +27,11 @@ class AddItem extends React.Component {
       headers: {},
     })
       .then((response) => {
-        //handle success
+        //handle success response
         var title = response.data[0].title;
         var body = response.data[0].body;
         var serverurls = response.data[1];
-        console.log(title);
+        //if the product price is not available it will send alert to user if else it will add data to cart
         if (title === "error") {
           alert(body);
         } else {
@@ -39,29 +39,14 @@ class AddItem extends React.Component {
         }
       })
       .catch(function (err) {
-        //handle error
+        //handles error
         console.log(err);
       });
   }
 
+  //call when on submit, updating current list of url and products information
   handleSubmit(event) {
-    // alert("Item has been added! " + this.state.value);
     this.addurl(this.state.value);
-
-    // this.props.onAdd(this.state.value);
-
-    // axios
-    //   .get("http://127.0.0.1:3000/")
-    //   .then(function (response) {
-    //     console.log(response);
-    //     alert(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //     alert(console);
-    //   });
-    // this.getProductInfo();
-
     event.preventDefault();
     this.setState({
       value: "",
@@ -70,8 +55,6 @@ class AddItem extends React.Component {
 
   render() {
     return (
-      //tracks how many items you currently have
-
       // form to add item
       <Form style={divStyle} onSubmit={this.handleSubmit}>
         <Form.Group controlId="formBasicEmail">
@@ -94,6 +77,7 @@ class AddItem extends React.Component {
     );
   }
 }
+//for positioning
 const divStyle = {
   paddingTop: "3%",
   paddingLeft: "20%",

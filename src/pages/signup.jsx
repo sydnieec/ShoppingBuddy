@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Grid, Row, Col } from "react-bootstrap";
-import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/navbar.jsx";
+import Navbar from "../components/navbar.jsx";
 
+//sign up page for Shopping Buddy using Bootstrap forms
 const SignUpPage = () => {
   return (
     <div>

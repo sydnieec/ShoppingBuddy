@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Product from "./product";
 import Container from "react-bootstrap/Container";
 
+//maps the list of products that is currently being tracked to Product Component
 class Products extends Component {
   render() {
     return (

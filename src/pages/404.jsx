@@ -1,5 +1,6 @@
 import React from "react";
 
+//displays the 404 page whenever extension of the url is not found
 const NotFoundPage = () => {
   return (
     <div>

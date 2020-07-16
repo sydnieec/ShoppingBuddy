@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/navbar.jsx";
-import Item from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/itemsComponent.jsx";
-import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
-import PostList from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/PostList.jsx";
-import Products from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/products.jsx";
-import Product from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/product.jsx";
-import Main from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/main.jsx";
+import Navbar from "../components/navbar.jsx";
+
+//main page of Shopping Buddy where adding products and viewing current products is
+import Main from "../components/main.jsx";
 const MyAccountPage = () => {
   return (
     <div>
@@ -21,11 +18,6 @@ const MyAccountPage = () => {
       >
         My account
       </h1>
-
-      {/* <AddItem /> */}
-      {/* <Item /> */}
-      {/* <PostList /> */}
-      {/* <Products /> */}
       <Main />
     </div>
   );

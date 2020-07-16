@@ -1,23 +1,24 @@
 import React, { Component } from "react";
-import Products from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/products.jsx";
-import AddItem from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/addItem.jsx";
-import PostList from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/PostList.jsx";
+import Products from "./products";
+import AddItem from "./addItem.jsx";
 import axios from "axios";
 
 class Main extends Component {
+  //current list of product information and keeps track of which urls are being updated
   state = {
     productslist: [],
     urls: [],
   };
 
+  //filters deleted id from product list and url list whenver item is deleted
   handleDelete = (productId) => {
-    // console.log("event handler called", counterId);
     const productslist = this.state.productslist.filter(
       (c) => c.id !== productId
     );
     this.setState({ productslist });
     const urls = this.state.urls.filter((e) => e !== productId);
     this.setState({ urls });
+    //sends a post request back to server of most recent urls
     axios({
       method: "post",
       url: "http://localhost:3000/updatelist",
@@ -35,24 +36,22 @@ class Main extends Component {
       });
   };
 
+  //called from additem component to add product infomation and update url list
   handleAdd = (myurl, productId, productprice, serverurls) => {
-    // console.log("event handler called", counterId);
     const productslist = this.state.productslist;
     const urls = serverurls;
-
-    //hm
     this.state.productslist.push({
       id: myurl,
       name: productId,
       value: productprice,
     });
-    // this.state.urls.push(myurl);
     this.setState({ urls: serverurls });
     console.log(this.state.urls);
     this.setState({ productslist });
     console.log(this.state.urls);
   };
 
+  //called to retreive most recent data stored on the server
   handleRefresh() {
     const urls = this.state.urls;
     axios({
@@ -62,8 +61,6 @@ class Main extends Component {
       headers: {},
     })
       .then((response) => {
-        //handle success
-
         console.log(response.data);
       })
       .catch(function (err) {
@@ -72,10 +69,10 @@ class Main extends Component {
       });
   }
 
+  //called in the beginning of lifecycle, to reteive the product information last stored on the server to display
   componentDidMount() {
     const productslist = this.state.productslist;
     document.title = "My Account";
-
     axios
       .get("http://localhost:3000/testing")
       .then((response) => {
@@ -93,10 +90,10 @@ class Main extends Component {
             });
           }
         }
+        //updates list of variables
         var serverUrls = response.data[response.data.length - 1];
         this.setState({ urls: serverUrls });
         this.setState({ productslist });
-        console.log(this.state.urls);
       })
       .catch((error) => {
         console.log(error);
@@ -104,7 +101,6 @@ class Main extends Component {
       });
   }
   render() {
-    // this.handleRefresh();
     return (
       <React.Fragment>
         <div
@@ -117,7 +113,6 @@ class Main extends Component {
             onAdd={this.handleAdd}
           />
         </div>
-
         <div
           style={{
             divStyle,
@@ -127,7 +122,6 @@ class Main extends Component {
             productslist={this.state.productslist}
             onDelete={this.handleDelete}
           />
-          {/* <PostList /> */}
         </div>
       </React.Fragment>
     );
@@ -135,6 +129,8 @@ class Main extends Component {
 }
 
 export default Main;
+
+//used for styling
 const divStyle = {
   paddingTop: "3%",
   paddingLeft: "5%",

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-const uiproductlist = [];
+//component is currently not in use
+//this file was used to test API requests from the server and log responses to the console.
 class PostList extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ class PostList extends Component {
     console.log("response data " + responsedata);
   }
 
+  //using axios to send a get request to local server and log the API response
   componentDidMount() {
     axios
       .get("http://localhost:3000/testing")
@@ -28,7 +30,7 @@ class PostList extends Component {
         this.setState({ errorMsg: "Error retrieving data" });
       });
   }
-
+  //maps the respone data to a displayed list
   render() {
     const { products, errorMsg } = this.state;
     return (

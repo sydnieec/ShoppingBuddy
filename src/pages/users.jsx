@@ -1,16 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Navbar from "/Users/sydniechau/Downloads/shoppingbuddy/src/components/navbar.jsx";
+import Navbar from "../components/navbar.jsx";
 
+//page for user login
 const UsersPage = () => {
   return (
     <div>
       <Navbar />
-
       <h1 style={divStyle} className="text-center">
-        Welcome back!{" "}
+        Welcome back!
       </h1>
       <Form style={divStyle}>
         <Form.Group controlId="formBasicEmail">
@@ -35,6 +34,7 @@ const UsersPage = () => {
 };
 export default UsersPage;
 
+//centers the login component on the page
 const divStyle = {
   paddingTop: "5%",
   paddingLeft: "20%",

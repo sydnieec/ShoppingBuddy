@@ -1,7 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./components/navbar";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +13,7 @@ import UsersPage from "./pages/users";
 import MyAccountPage from "./pages/myaccount";
 import SignUpPage from "./pages/signup";
 
+//router to direct url to a certain components
 function App() {
   return (
     <Router>
@@ -27,11 +26,6 @@ function App() {
         <Redirect to="/404" />
       </Switch>
     </Router>
-    // <React.Fragment>
-
-    //   <Navbar />
-
-    // </React.Fragment>
   );
 }
 

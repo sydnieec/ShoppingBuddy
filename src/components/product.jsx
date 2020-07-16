@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
+
+//displays each product into cards using Bootstrap and retrieves info from Products class
 class Product extends Component {
   render() {
-    // console.log("props", this.props);
     return (
       <div className="m-4">
         <Card style={{ width: "24.5rem" }}>
@@ -28,6 +29,8 @@ class Product extends Component {
       </div>
     );
   }
+
+  //changes the colour of the badges class depending on whether the product is on sale/more expensive or the same .
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
     if (this.props.product.value.startsWith("SALE") === true) {
@@ -42,6 +45,7 @@ class Product extends Component {
     return classes;
   }
 
+  //if the product name is longer than 100 characters, the string is reduced to a limit of 100 characters
   formatvalue() {
     if (this.props.product.name.length > 100) {
       var trimmedString = this.props.product.name.substring(0, 100);

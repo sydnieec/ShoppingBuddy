@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+//navigation component that is displayed on the top of every page in Shopping Buddy containing signup/login/my account links
 class Navbar extends Component {
   state = {};
   render() {
@@ -40,6 +41,9 @@ class Navbar extends Component {
           </ul>
         </div>
       </nav>
+
+      //OLD NAVBAR CODE CONTAINING THE OPTION TO CREATE AN ACCOUNT FOR SHOPPING BUDDY AND LOGIN
+      //NO LONGER NEEDED BUT USED FOR REFERENCE
       // <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       //   <Link to="/" >
       //     <a className="navbar-brand" style={{ fontWeight: "bold" }} href="#">
